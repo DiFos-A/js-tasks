@@ -8,10 +8,12 @@
 // Вывести в консоль через шаблонные строки заработную плату всех работников в таком формате:
 
 // Заработная плата ххх составляет ххх рублей.
-const engineers = {Den: 1000 , Matt: 5000 , Steve: 2000};
-console.log(`Заработная плата Den составляет ${engineers.Den}`);
-console.log(`Заработная плата Matt составляет ${engineers.Matt}`);
-console.log(`Заработная плата Steve составляет ${engineers.Steve}`);
+const engineers = { Den: 1000, Matt: 5000, Steve: 2000 };
+
+for (let property in engineers){
+    console.log(`Заработная плата ${property} : ${engineers[property]}`);
+}
+
 // Задание 3
 // Создать массив из 5 элементов.
 
@@ -56,19 +58,21 @@ console.log(sum);
 
 // 3)Посчитать и вывести в консоль сумму четных элементов в массиве.
 for (i = 0; i < numbers.length; i++) {
-    if (i % 2) {
+    if (i % 2 == 0) {
         sum = sum + numbers[i];
     }
 }
 console.log(sum);
 
+
 //4)Найти и вывести в консоль максимальное число массива.
-let max = 0
+let max = numbers[0]
 for (i = 0; i < numbers.length; i++) {
     if (max < numbers[i]) {
         max = numbers[i];
     }
 }
+console.log(max)
 // 5)Определить и вывести в консоль индекс максимального числа массива (или индексы, если число встречается более одного раза). Само максимальное число мы уже нашли в прошлой части задачи, повторно его искать не нужно.
 console.log(max);
 for (i = 0; i < numbers.length; i++) {
